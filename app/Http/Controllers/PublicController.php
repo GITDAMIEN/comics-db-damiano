@@ -10,11 +10,4 @@ class PublicController extends Controller
         return view('welcome');
     }
 
-    public function addComic(){
-        return view('addComic');
-    }
-
-    public function allComics(){
-        return view('allComics');
-    }
 }

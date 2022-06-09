@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ComicController;
+use App\Http\Controllers\PublicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Routes to PublicController
 Route::get('/', [PublicController::class, 'welcome'])->name('welcome');
-Route::get('/comics/addComic', [PublicController::class, 'addComic'])->name('addComic');
-Route::get('/comics/allComics', [PublicController::class, 'allComics'])->name('allComics');
+
+//Routes to ComicController
+Route::get('/comics/addComic', [ComicController::class, 'addComic'])->name('addComic');
+Route::get('/comics/allComics', [ComicController::class, 'allComics'])->name('allComics');
+Route::get('/comics/comicDetails/{comic}', [ComicController::class, 'comicDetails'])->name('comicDetails');
+Route::post('/comics/send', [ComicController::class, 'sendComic'])->name('sendComic');
