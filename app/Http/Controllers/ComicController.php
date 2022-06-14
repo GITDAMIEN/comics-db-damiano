@@ -62,4 +62,8 @@ class ComicController extends Controller
     public function comicDetails(Comic $comic){
         return view('comicDetails', compact('comic'));
     }
+
+    public function editComic(Comic $comic){
+        return view('editComic', compact('comic'));
+    }
 }

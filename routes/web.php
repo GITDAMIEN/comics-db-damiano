@@ -23,3 +23,4 @@ Route::get('/comics/addComic', [ComicController::class, 'addComic'])->name('addC
 Route::get('/comics/allComics', [ComicController::class, 'allComics'])->name('allComics');
 Route::get('/comics/comicDetails/{comic}', [ComicController::class, 'comicDetails'])->name('comicDetails');
 Route::post('/comics/send', [ComicController::class, 'sendComic'])->name('sendComic');
+Route::get('/comics/edit/{comic}', [ComicController::class, 'editComic'])->name('editComic');
