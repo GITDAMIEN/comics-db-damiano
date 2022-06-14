@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class ComicController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth')->except('allComics');
+    }
     
     public function addComic(){
         return view('addComic');
