@@ -10,7 +10,7 @@ class ComicController extends Controller
 {
 
     public function __construct(){
-        $this->middleware('auth')->except('allComics');
+        $this->middleware('auth')->except('allComics', 'comicDetails');
     }
     
     public function addComic(){
@@ -65,5 +65,10 @@ class ComicController extends Controller
 
     public function editComic(Comic $comic){
         return view('editComic', compact('comic'));
+    }
+
+    public function deleteComic(Comic $comic){
+        $comic->delete();
+        return redirect(route('allComics'));
     }
 }

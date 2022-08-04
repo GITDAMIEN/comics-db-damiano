@@ -14,8 +14,9 @@
 
     <div class="container">
         <div class="row">
-            <form class="col-12 col-md-6 offset-md-3" method="POST" enctype="multipart/form-data" action="{{route('sendComic')}}">
+            <form class="col-12 col-md-6 offset-md-3" method="POST" enctype="multipart/form-data" action="{{route('sendComic', compact('comic'))}}">
                 @csrf
+                @method('put')
                 <div class="form-floating mb-3">
                     <input name="title" type="text" class="form-control" id="titleInput" placeholder="Titolo:" value="{{$comic->title}}">
                     <label for="titleInput">Titolo:</label>
